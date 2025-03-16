@@ -1,0 +1,57 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=postgresql://tms_user:tms_secret_25@database:5432/tms_db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 2m
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - zeetms_network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 2m
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - zeetms_network
+
+  database:
+    build: ./database
+    ports:
+      - "5432:5432"
+    networks:
+      - zeetms_network
+
+  webserver:
+    build: ./webserver
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    entrypoint: ["/usr/sbin/nginx"]
+    command: ["-g", "daemon off;"]
+    networks:
+      - zeetms_network
+
+networks:
+  zeetms_network:
+    driver: bridge
