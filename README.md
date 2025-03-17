@@ -4,11 +4,11 @@ Transportation Management System with FastAPI, ReactJS, PostgreSQL, and Nginx.
 
 We propose to create a TMS software to answer small to medium companies.
 
-Busines uses cases
-Data model
-Technical requirments
-Build
-Deployment
+Busines uses cases  
+Data model  
+Technical requirments  
+Build  
+Deployment  
 
 ## Setup
 1. Run `docker-compose up --build`
