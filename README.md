@@ -1,10 +1,14 @@
-
-# zeetms
-Describe our ZeeTMS software
-=======
 # ZeeTMS
-
+A Transportation Management System (TMS) is a software solution designed to help businesses efficiently plan, execute, and optimize the movement of goods. It is commonly used in supply chain and logistics management to improve transportation efficiency, reduce costs, and enhance visibility.
 Transportation Management System with FastAPI, ReactJS, PostgreSQL, and Nginx.
+
+We propose to create a TMS software to answer small to medium companies.
+
+Busines uses cases
+Data model
+Technical requirments
+Build
+Deployment
 
 ## Setup
 1. Run `docker-compose up --build`
