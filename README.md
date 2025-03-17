@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # zeetms
 Describe our ZeeTMS software
 =======
@@ -14,4 +14,5 @@ Transportation Management System with FastAPI, ReactJS, PostgreSQL, and Nginx.
 - Admin: `admin` / `password123`
 - Operator: `operator` / `password123`
 - Viewer: `viewer` / `password123`
->>>>>>> Initial commit
+
+![ZeeTMS(2)](https://github.com/user-attachments/assets/e69fbd31-1a28-4927-9113-267815516394)
